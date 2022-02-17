@@ -37,8 +37,8 @@ http.createServer((request, response)=> {
             response.end(data.toString());
         })
     }
-    if(pathName.indexOf('/public') === 0){ // controller: handle public folder path 
-        fs.readFile(`./${pathName}`, (err, data)=> {
+    if(pathName.indexOf('/public/') === 0){ // controller: handle public folder path 
+        fs.readFile(`.${pathName}`, (err, data)=> {
             if(err) return handleErrorPage();
  
              response.end(data.toString());
